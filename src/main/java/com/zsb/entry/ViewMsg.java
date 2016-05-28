@@ -40,7 +40,7 @@ public class ViewMsg implements ActionListener {
 		Map<String,String> map = getPartitionInfo();
 		Gson gson = new Gson();
 		System.out.println(gson.toJson(map));
-
+		
 	}
 
 	private Map<String,String> getPartitionInfo() {
@@ -69,7 +69,7 @@ public class ViewMsg implements ActionListener {
 					kafka.api.OffsetRequest.LatestTime(), clientName);
 			if (consumer != null)
 				consumer.close();
-			info2.put(String.valueOf(entry.getKey()), String.valueOf(readOffset));
+			info2.put("Partition："+String.valueOf(entry.getKey()), "消息总数为："+String.valueOf(readOffset));
 		}
 		return info2;
 	}

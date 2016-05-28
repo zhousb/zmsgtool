@@ -28,4 +28,13 @@ public final class Consts {
 		public static final String MDS_PWD = "mds.password";
 		
 	}
+	
+	public class ZK_KAFKF_NODE_CONST{
+		
+		public static final String CONSUMER_PATH = "/consumers";
+		public static final String BROKERS_PATH = "/brokers";
+		
+	}
+	
+	
 }
