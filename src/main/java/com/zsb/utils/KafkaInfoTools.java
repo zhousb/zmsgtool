@@ -46,7 +46,7 @@ public class KafkaInfoTools {
 		return offsets[0];
 	}
 
-	private TreeMap<Integer,PartitionMetadata> findLeader(List<String> a_seedBrokers,
+	public static TreeMap<Integer,PartitionMetadata> findLeader(List<String> a_seedBrokers,
 			int a_port, String a_topic) {
 		TreeMap<Integer, PartitionMetadata> map = new TreeMap<Integer, PartitionMetadata>();
 		for (String seed : a_seedBrokers) {
@@ -82,9 +82,7 @@ public class KafkaInfoTools {
 
 		List<String> seeds = new ArrayList<String>();
 		seeds.add(seed);
-		KafkaInfoTools tool = new KafkaInfoTools();
-
-		TreeMap<Integer,PartitionMetadata> metadatas = tool.findLeader(seeds, port, topic);
+		TreeMap<Integer,PartitionMetadata> metadatas = findLeader(seeds, port, topic);
 		
 		int sum = 0;
 		
