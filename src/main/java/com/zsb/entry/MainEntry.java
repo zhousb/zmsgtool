@@ -234,7 +234,7 @@ public class MainEntry implements ActionListener {
 	}
 
 	private void viewTopic() {
-
+		new ViewMsg().init();
 	}
 
 	private void buildStrMsgPanel() {
